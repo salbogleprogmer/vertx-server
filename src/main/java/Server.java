@@ -14,7 +14,7 @@ public class Server extends AbstractVerticle {
     public void start(Future<Void> startFuture) throws Exception {
         SelfSignedCertificate certificate = SelfSignedCertificate.create();
         Router router = Router.router(vertx);
-        router.get().handler(h->{
+        router.get("/").handler(h->{
             h.request().exceptionHandler(ex->{
                 System.out.println("ate get exception");
             });
