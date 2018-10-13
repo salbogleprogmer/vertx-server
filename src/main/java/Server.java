@@ -15,7 +15,7 @@ public class Server extends AbstractVerticle {
                 .setTrustOptions(certificate.trustOptions())
         ).requestHandler(req->{req.response().end("Deployed");
            req.exceptionHandler(error->{
-               error.printStackTrace();
+               System.out.println("Error...lol");
            });
           req.response().close();
         }).listen(8443,handler->{
